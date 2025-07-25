@@ -3,7 +3,7 @@ import '../App.css';
 const Footer = () => {
   return (
     <footer>
-      <p>© 2025 Redistributor Token. All rights reserved.</p>
+      <p>© 2025 Garetto G-ETTO. All rights reserved.</p>
     </footer>
   );
 };
