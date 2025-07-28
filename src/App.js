@@ -206,6 +206,7 @@ function App() {
                                   < div key={event.transactionHash}>
                                     <p><strong>Sender:</strong> {event.sender}</p>
                                     <p><strong>Random numbers:</strong> {event.random1}, {event.random2}, {event.random3}</p>
+                                    <p><strong>Random numbers:</strong> {event.transferCount}</p>
                                     <p><strong>Sum:</strong> {Number(event.random1) + Number(event.random2) + Number(event.random3)}</p>
                                     <p><strong>Profit Transferred:</strong> {event.profitTransferred} G-ETTO1</p>
                                     <p><strong>Timestamp:</strong> {new Date(event.timestamp).toLocaleString()}</p>
@@ -221,10 +222,10 @@ function App() {
                </div>
                   
                <div className='getto12'>
-                <h4>Redistribution Logic</h4>
+                <h3>Redistribution Logic</h3>
                   <p>G-ETTO1 has one redistributor, for a redistribution attempt you must send exactly
-                    50 G-ETTO1 to that address. When a user triggers a redistribution, three random 
-                    numbers are generated. Their sum determines how much of the token reserve will 
+                    50 G-ETTO1 to the redistributor contract address. When a user triggers a redistribution, three random 
+                    numbers from 1 to 33 are generated. Their sum determines how much of the token reserve will 
                     be transferred to the caller as profit:</p>
                     <ul>
                    <li> If the sum is exactly 88, the caller receives 30% of the total token reserve.</li>
@@ -237,7 +238,101 @@ function App() {
                     </ul>
                </div>
           </div>
-        <div className='getto2'id="hetto2">G-ETTO2</div>
+        <div className='getto2' id="getto2">
+               <div className='getto21'>
+               <div className='getto111'>
+                    <h3>G-ETTO2</h3>
+                    <h4>0xD682aC73f93628FbB78B1400163c286b23635808</h4>
+                    </div>
+
+            <div className='getto112'>
+              {!isLoading && events[1] && (
+                <div>
+                  <h3>{events[1].name}</h3>
+                  <h4>{events[1].address}</h4>
+                  <p><strong>Cycle ID:</strong> {events[1].cycleId}</p>
+                  <p><strong>Token Balance:</strong> {(events[1].tokenBalance / 1e18).toFixed(8)}</p>
+                  <h3>Latest Redistribution Attempt:</h3>
+                  {redistributions[events[1].address]?.length > 0 ? (
+                    <div>
+                      {[redistributions[events[1].address].at(-1)].map((event) => (
+                        <div key={event.transactionHash}>
+                          <p><strong>Sender:</strong> {event.sender}</p>
+                          <p><strong>Random numbers:</strong> {event.random1}, {event.random2}, {event.random3}</p>
+                          <p><strong>Transfers Count:</strong> {event.transferCount}</p>
+                          <p><strong>Sum:</strong> {Number(event.random1) + Number(event.random2) + Number(event.random3) + Number(event.transferCount)}</p>
+                          <p><strong>Profit Transferred:</strong> {event.profitTransferred} G-ETTO2</p>
+                          <p><strong>Timestamp:</strong> {new Date(event.timestamp).toLocaleString()}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p>No recent redistribution attempts found.</p>
+                  )}
+                </div>
+              )}
+             </div>
+              <div className='getto112'>
+              {!isLoading && events[2] && (
+                <div>
+                  <h3>{events[2].name}</h3>
+                  <h4>{events[2].address}</h4>
+                  <p><strong>Cycle ID:</strong> {events[2].cycleId}</p>
+                  <p><strong>Token Balance:</strong> {(events[2].tokenBalance / 1e18).toFixed(8)}</p>
+                  <h3>Latest Redistribution Attempt:</h3>
+                  {redistributions[events[2].address]?.length > 0 ? (
+                    <div>
+                      {[redistributions[events[2].address].at(-1)].map((event) => (
+                        <div key={event.transactionHash}>
+                          <p><strong>Sender:</strong> {event.sender}</p>
+                          <p><strong>Random numbers:</strong> {event.random1}, {event.random2}, {event.random3}</p>
+                           <p><strong>Transfers Count:</strong> {event.transferCount}</p>
+                          <p><strong>Sum:</strong> {Number(event.random1) + Number(event.random2) + Number(event.random3) + Number(event.transferCount)}</p>
+                          <p><strong>Profit Transferred:</strong> {event.profitTransferred} G-ETTO2</p>
+                          <p><strong>Timestamp:</strong> {new Date(event.timestamp).toLocaleString()}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p>No recent redistribution attempts found.</p>
+                  )}
+                </div>
+                
+              )}
+           </div>
+          </div>
+          <div className='getto22'>
+                <h3>Redistribution Logic</h3>
+                  <p>G-ETTO2 has 2 redistributors, for a redistribution attempt you must send 
+                    100 G-ETTO1 from an address to any address. Direct transfers to the
+                     redistributor contracts are blocked. In this case redistributor 1 gets 50 G-ETTO1
+                    redistributor 2 gets 30 G-ETTO1 and the address to which you have sent gets 
+                    20 redistributor 1 gets 50 G-ETTO1.  When a user triggers a redistribution, redistributor 1
+                    generates three random numbers from 1 to 33, redistributor 2 generates three random numbers from 1 to 66
+                    and the transfers count is increased by one. The sum of 
+                    the three random numbers and transfers count determines how much of the token reserve will 
+                    be transferred to the caller as profit:</p>
+                    <h3>Redistributor 1</h3>
+                    <ul>
+                   <li> If the sum is greater than 80 and even, the caller receives 10% of the token reserve</li>
+
+                    <li>If the sum is greater than 90 and odd, the caller receives 20% of the token reserve.</li>
+
+                    <li>If none of the above conditions are met, the caller receives no reward.</li>
+                    </ul>
+
+                    <h3>Redistributor 2</h3>
+                    <ul>
+                   <li> If the sum is exactly 192, the caller receives 30% of the total token reserve.</li>
+
+                   <li> If the sum is less than 20 and odd, the caller receives 20% of the token reserve.</li>
+
+                    <li>If the sum is greater than 180 and even, the caller receives 10% of the token reserve.</li>
+
+                    <li>If none of the above conditions are met, the caller receives no reward.</li>
+                    </ul>
+          </div>
+        </div>
         <div className='swapBlock'id="swapBlock">SWAP</div>
       </div>
 
