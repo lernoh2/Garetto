@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import { FaGithub } from "react-icons/fa";
 import WalletConnect from '../components/WalletConnect';
 
 const Header = () => {
@@ -11,7 +12,9 @@ const Header = () => {
 return (
   <header className="header">
     <div className="headerSides">
-      
+        <a href="https://github.com/lernoh2/Gaming-Redistributor-Token" target="_blank" rel="noreferrer">
+            <FaGithub className="socialIcons" />
+          </a>
     </div>
     <div className="header-buttons">
       <button onClick={() => scrollToSection('aboutBlock')} className="header-button">ABOUT</button>
