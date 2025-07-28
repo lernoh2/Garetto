@@ -206,7 +206,7 @@ function App() {
                                   < div key={event.transactionHash}>
                                     <p><strong>Sender:</strong> {event.sender}</p>
                                     <p><strong>Random numbers:</strong> {event.random1}, {event.random2}, {event.random3}</p>
-                                    <p><strong>Random numbers:</strong> {event.transferCount}</p>
+                                    <p><strong>Transfers Count:</strong> {event.transferCount}</p>
                                     <p><strong>Sum:</strong> {Number(event.random1) + Number(event.random2) + Number(event.random3)}</p>
                                     <p><strong>Profit Transferred:</strong> {event.profitTransferred} G-ETTO1</p>
                                     <p><strong>Timestamp:</strong> {new Date(event.timestamp).toLocaleString()}</p>
