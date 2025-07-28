@@ -73,9 +73,6 @@ function App() {
             data.tokenBalance = (await contractInstance.tokenBalance()).toString();
           }
 
-          const balanceRaw = await provider.getBalance(contract.address);
-          data.balance = ethers.formatEther(balanceRaw);
-
           allEvents.push(data);
         }
 
@@ -166,6 +163,7 @@ function App() {
       }
 
       if (!isCancelled) {
+        console.log("Updating redistributions:", result);
         setRedistributions(result);
       }
     };
@@ -178,16 +176,69 @@ function App() {
     };
   }, [contracts, redistributions]);
 
-  return (
+   return (
     <div>
       <Header />
     
       <div className='content'>
         <div className='firstBlock'> First Block</div>
-          <div className='aboutBlock'>About</div>
-        <div className='getto1'>G-ETTO1</div>
-        <div className='getto2'>G-ETTO2</div>
-        <div className='swapBlock'>SWAP</div>
+          <div className='aboutBlock'id="aboutBlock">About</div>
+        <div className='getto1'id="getto1">
+              <div className='getto11'>
+                  <div className='getto111'>
+                    <h3>G-ETTO1</h3>
+                    <h4>0x6eD4a1B8efDe6438C1AE6E92820D2aB981aA90E2</h4>
+                    </div>
+                    <div className='getto112'>
+                    {isLoading && <p>Loading contract info...</p>}
+                        {!isLoading && events[0] && (
+                          <div>
+                            <h3>{events[0].name}</h3>
+                            <h4>{events[0].address}</h4>
+                            <p><strong>Cycle ID:</strong> {events[0].cycleId}</p>
+                            <p><strong>Token Balance:</strong> {(events[0].tokenBalance / 10 ** 18).toFixed(8)}</p>
+        
+                            <h3>Latest Redistribution Attempt:</h3>
+                            {redistributions[events[0].address] && redistributions[events[0].address].length > 0 ? (
+                              <>
+                               {[redistributions[events[0].address].at(-1)].map((event) => (
+
+                                  < div key={event.transactionHash}>
+                                    <p><strong>Sender:</strong> {event.sender}</p>
+                                    <p><strong>Random numbers:</strong> {event.random1}, {event.random2}, {event.random3}</p>
+                                    <p><strong>Sum:</strong> {Number(event.random1) + Number(event.random2) + Number(event.random3)}</p>
+                                    <p><strong>Profit Transferred:</strong> {event.profitTransferred} G-ETTO1</p>
+                                    <p><strong>Timestamp:</strong> {new Date(event.timestamp).toLocaleString()}</p>
+                                  </div>
+                                ))}
+                              </>
+                            ) : (
+                              <p>No recent redistribution attempts found.</p>
+                            )}
+                          </div>
+                        )}
+                    </div>
+               </div>
+                  
+               <div className='getto12'>
+                <h4>Redistribution Logic</h4>
+                  <p>G-ETTO1 has one redistributor, for a redistribution attempt you must send exactly
+                    50 G-ETTO1 to that address. When a user triggers a redistribution, three random 
+                    numbers are generated. Their sum determines how much of the token reserve will 
+                    be transferred to the caller as profit:</p>
+                    <ul>
+                   <li> If the sum is exactly 88, the caller receives 30% of the total token reserve.</li>
+
+                   <li> If the sum is less than 20 and odd, the caller receives 20% of the token reserve.</li>
+
+                    <li>If the sum is greater than 80 and even, the caller receives 10% of the token reserve.</li>
+
+                    <li>If none of the above conditions are met, the caller receives no reward.</li>
+                    </ul>
+               </div>
+          </div>
+        <div className='getto2'id="hetto2">G-ETTO2</div>
+        <div className='swapBlock'id="swapBlock">SWAP</div>
       </div>
 
       <Footer />
