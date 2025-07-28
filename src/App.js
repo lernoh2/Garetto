@@ -307,7 +307,7 @@ function App() {
                     100 G-ETTO1 from an address to any address. Direct transfers to the
                      redistributor contracts are blocked. In this case redistributor 1 gets 50 G-ETTO1
                     redistributor 2 gets 30 G-ETTO1 and the address to which you have sent gets 
-                    20 redistributor 1 gets 50 G-ETTO1.  When a user triggers a redistribution, redistributor 1
+                    20 G-ETTO1.  When a user triggers a redistribution, redistributor 1
                     generates three random numbers from 1 to 33, redistributor 2 generates three random numbers from 1 to 66
                     and the transfers count is increased by one. The sum of 
                     the three random numbers and transfers count determines how much of the token reserve will 
