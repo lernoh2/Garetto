@@ -30,7 +30,7 @@ export const ETHEREUM_TOKENS = [
     name: "Garetto1",
     address: "0x6eD4a1B8efDe6438C1AE6E92820D2aB981aA90E2",
     decimals: 18,
-    logoURI: "/your-local-or-hosted-path/g-etto1.png",
+    logoURI: "logo192.png",
     chainId: 1,
   },
   {
@@ -38,7 +38,7 @@ export const ETHEREUM_TOKENS = [
     name: "Garetto2",
     address: "0xD682aC73f93628FbB78B1400163c286b23635808",
     decimals: 18,
-    logoURI: "/your-local-or-hosted-path/g-etto2.png",
+    logoURI: "logo192.png",
     chainId: 1,
   },
 ];
