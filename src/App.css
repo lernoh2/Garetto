@@ -124,15 +124,28 @@ footer {
 }
 
 .aboutBlock {
-  width: 900px;
+  width: 1040px;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  border: none;
+  margin-top: 60px;
+}
+
+.subAbout {
+  width: 460px;
   height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: rgb(255, 255, 255);
-  color: #600202;
-  border: none;
-  margin-top: 60px;
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 10px rgba(133, 16, 16, 2),
+              0px 0px 10px rgba(133, 16, 16, 2);
+
 }
 
 .getto1 {

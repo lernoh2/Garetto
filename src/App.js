@@ -3,6 +3,7 @@ import { JsonRpcProvider } from "ethers";
 import { ethers } from "ethers";
 import garetto1Abi from './abi/garetto1_abi.json';
 import garetto2Abi from './abi/garetto2_abi.json';
+import video from './assets/video.mp4';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
@@ -181,8 +182,42 @@ function App() {
       <Header />
     
       <div className='content'>
-        <div className='firstBlock'> First Block</div>
-          <div className='aboutBlock'id="aboutBlock">About</div>
+        <div className='firstBlock'> 
+           <video className="hero-video" autoPlay loop muted playsInline>
+            <source src={video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+         <div className='aboutBlock'id="aboutBlock">
+             <div className='subAbout'>
+            <p>
+              Gaming Redistributor Token is a new type of token that features a 
+              fully automated redistribution mechanism built directly into its structure. It offers holders
+             more functionality, efficiency, and guarantees than standard tokens. While behaving like a regular
+              token—tradable on both DEXes and CEXes—G-ETTO also delivers powerful additional functionality that
+               brings decentralization, passion, fun, and of course, profit. The logic and behavior of redistributor
+                contracts can vary significantly. In this showcase, we present two types of classic redistributor
+                 tokens, each demonstrating a unique redistribution style. However, the possibilities are endless — 
+                 there are thousands of potential redistribution scenarios, and you can adapt the model to suit your
+                  specific needs when deploying your own token. Two demonstrative models: G-ETTO1 and G-ETTO2 are deployed
+                  on Sepolia Testnet and are showcasing just two scenarios of thousands. 
+            </p>
+            </div>
+             <div className='subAbout'>
+            <p>
+              Redistributor tokens can be divided into two main categories: classic redistributor tokens and trading redistributor tokens.
+                In trading redistributor tokens, the redistribution mechanism is primarily used to trigger periodic price surges, offering
+                 holders additional profit by increasing the quantity of their tokens during key moments. In contrast, classic redistributor 
+                 tokens are built entirely around the redistribution mechanism as their core functionality. They behave like regular tokens—fully
+                  compatible with existing trading platforms and tokenomics.
+                Classic redistributor tokens can be seamlessly integrated into current systems, enhancing them with more utility, transparency,
+                 and excitement. One way or another, holders will naturally gravitate toward options that offer greater functionality and better 
+                 profit potential—making redistributor tokens a natural next step in blockchain evolution.
+
+            </p>
+            </div>
+          </div>
+      
         <div className='getto1'id="getto1">
               <div className='getto11'>
                   <div className='getto111'>
