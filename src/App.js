@@ -6,6 +6,7 @@ import garetto2Abi from './abi/garetto2_abi.json';
 import video from './assets/video.mp4';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import SwapForm from './components/SwapForm';
 import './App.css';
 
 const RPCS = [
@@ -176,6 +177,12 @@ function App() {
       clearInterval(interval);
     };
   }, [contracts, redistributions]);
+
+const handleSwap = async (fromToken, toToken, amount) => {
+  console.log("Swap requested:", fromToken, toToken, amount);
+};
+
+
 
    return (
     <div>
@@ -368,7 +375,15 @@ function App() {
                     </ul>
           </div>
         </div>
-        <div className='swapBlock'id="swapBlock">SWAP</div>
+       <div className='swapBlock'>
+          <div className='swapHeader' id="swapBlock">
+          <h2>1Inch Fusion Swap</h2>
+          <h6>This is very exciting, don't swap yourself accidentally 😊</h6>
+            </div>
+            
+          <SwapForm onSwap={handleSwap} />
+      
+       </div>
       </div>
 
       <Footer />

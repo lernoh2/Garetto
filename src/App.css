@@ -15,6 +15,35 @@
     
 }
 
+.content h2 {
+ font-family: "Helvetica Neue";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  text-shadow: 0px 0px 10px #600202;
+  background: transparent;
+  color: #600202;
+}
+
+.content h3 {
+ font-family: "Helvetica Neue";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  text-shadow: 0px 0px 10px #600202;
+  background: transparent;
+  color: #600202;
+}
+
+label {
+ font-family: "Helvetica Neue";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  text-shadow: 0px 0px 10px #600202;
+  background: transparent;
+  color: #600202;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -253,12 +282,82 @@ footer {
 
 .swapBlock {
   width: 900px;
-  height: 400px;
+  height: 300px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  border: none;
+  padding: 10px;
+  margin: 60px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 10px rgba(133, 16, 16, 2),
+              0px 0px 10px rgba(133, 16, 16, 2);
+}
+
+.swapHeader {
+  width: 800px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  border: none;
+}
+
+
+.swap {
+  width: 900px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  border: none;
+}
+
+.select {
+  width: 200px;
+  height: 26px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: #600202;
+  padding: 2px;
+  color: #ffffff;
+  border-radius: 8px;
+  border: none;
+}
+
+.swapSelct {
+  width: 280px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  padding: 2px;
+  gap: 10px;
+  border: none;
+}
+
+.swapButton {
+   width: 150px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background: rgb(255, 255, 255);
   color: #600202;
   border: none;
-  margin-top: 60px;
+  margin-left: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(133, 16, 16, 2),
+              0px 0px 10px rgba(133, 16, 16, 2);
 }
