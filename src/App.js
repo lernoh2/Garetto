@@ -352,9 +352,9 @@ function App() {
                     be transferred to the caller as profit:</p>
                     <h3>Redistributor 1</h3>
                     <ul>
-                   <li> If the sum is greater than 80 and even, the caller receives 10% of the token reserve</li>
+                   <li> If the sum is greater than 80 and odd, the caller receives 10% of the token reserve</li>
 
-                    <li>If the sum is greater than 90 and odd, the caller receives 20% of the token reserve.</li>
+                    <li>If the sum is greater than 90 and even, the caller receives 20% of the token reserve.</li>
 
                     <li>If none of the above conditions are met, the caller receives no reward.</li>
                     </ul>
