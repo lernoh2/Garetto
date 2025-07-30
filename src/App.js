@@ -375,7 +375,7 @@ function App() {
             <div className='swapHeader' id="swapBlock">
               <h4>
                 While I was struggling against a bunch of errors to implement more efficient swaps,
-                I could just say visit {" "}
+                I could just say visit{" "}
                 <a
                   href="https://app.1inch.io/advanced/swap?network=1&src=ETH"
                   target="_blank"
