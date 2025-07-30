@@ -6,7 +6,6 @@ import garetto2Abi from './abi/garetto2_abi.json';
 import video from './assets/video.mp4';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import keepCalm from './assets/keepCalm.png';
 import './App.css';
 
 const RPCS = [
@@ -352,9 +351,9 @@ function App() {
                     be transferred to the caller as profit:</p>
                     <h3>Redistributor 1</h3>
                     <ul>
-                   <li> If the sum is greater than 80 and odd, the caller receives 10% of the token reserve</li>
+                   <li> If the sum is greater than 80 and even, the caller receives 10% of the token reserve</li>
 
-                    <li>If the sum is greater than 90 and even, the caller receives 20% of the token reserve.</li>
+                    <li>If the sum is greater than 90 and odd, the caller receives 20% of the token reserve.</li>
 
                     <li>If none of the above conditions are met, the caller receives no reward.</li>
                     </ul>
@@ -374,25 +373,12 @@ function App() {
        <div className='swapBlock'>
             <div className='swapHeader' id="swapBlock">
               <h4>
-                While I was struggling against a bunch of errors to implement more efficient swaps,
-                I could just say visit{" "}
-                <a
-                  href="https://app.1inch.io/advanced/swap?network=1&src=ETH"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "white", textDecoration: "none" }}
-                >
-                  1inch
-                </a>{" "}
-                
+               My fellow users, swap your tokens wherever you can,
+                nobody cares - you are in "decentralized" space.
               </h4>
              
             </div>
-               <div>
-              <img
-                src={keepCalm}
-                alt="Keep calm in our ghetto" className='swapImg'/>
-                </div>
+          
           </div>
 
       </div>

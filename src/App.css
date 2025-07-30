@@ -38,6 +38,16 @@ content a {
   color: #600202;
 }
 
+.content h4 {
+ font-family: "Helvetica Neue";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  background: transparent;
+  color: #000000;
+}
+
+
 label {
  font-family: "Helvetica Neue";
   font-weight: 400;
@@ -285,7 +295,7 @@ footer {
 
 .swapBlock {
   width: 900px;
-  height: 300px;
+  height: 200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -298,8 +308,8 @@ footer {
 }
 
 .swapHeader {
-  width: 400px;
-  height: 300px;
+  width: 900px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
