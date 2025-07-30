@@ -6,7 +6,7 @@ import garetto2Abi from './abi/garetto2_abi.json';
 import video from './assets/video.mp4';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import SwapForm from './components/SwapForm';
+import keepCalm from './assets/keepCalm.png';
 import './App.css';
 
 const RPCS = [
@@ -177,10 +177,6 @@ function App() {
       clearInterval(interval);
     };
   }, [contracts, redistributions]);
-
-const handleSwap = async (fromToken, toToken, amount) => {
-  console.log("Swap requested:", fromToken, toToken, amount);
-};
 
 
 
@@ -376,14 +372,29 @@ const handleSwap = async (fromToken, toToken, amount) => {
           </div>
         </div>
        <div className='swapBlock'>
-          <div className='swapHeader' id="swapBlock">
-          <h2>1Inch Fusion Swap</h2>
-          <h6>This is very exciting, don't swap yourself accidentally 😊</h6>
+            <div className='swapHeader' id="swapBlock">
+              <h4>
+                While I was struggling against a bunch of errors to implement more efficient swaps,
+                I could just say that some guys guarantee that on{" "}
+                <a
+                  href="https://app.1inch.io/advanced/swap?network=1&src=ETH"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "white", textDecoration: "none" }}
+                >
+                  1inch
+                </a>{" "}
+                
+              </h4>
+             
             </div>
-            
-          <SwapForm onSwap={handleSwap} />
-      
-       </div>
+               <div>
+              <img
+                src={keepCalm}
+                alt="Keep calm in our ghetto" className='swapImg'/>
+                </div>
+          </div>
+
       </div>
 
       <Footer />
