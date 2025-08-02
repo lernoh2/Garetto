@@ -373,8 +373,8 @@ function App() {
        <div className='swapBlock'>
             <div className='swapHeader' id="swapBlock">
               <h4>
-               My fellow users, swap your tokens wherever you can,
-                nobody cares - you are in "decentralized" space.
+               UNDER CONSTRUCTION 
+      
               </h4>
              
             </div>
