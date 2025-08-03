@@ -373,8 +373,7 @@ function App() {
        <div className='swapBlock'>
             <div className='swapHeader' id="swapBlock">
               <h4>
-               UNDER CONSTRUCTION 
-      
+               The redistributor token is tied to its blockchain where it was deployed and falls out of the global trend of linking all blockchains to create one mega-platform, but sometimes efficiency means keeping it simple rather than overcomplicating things for no reason.
               </h4>
              
             </div>
